@@ -1,0 +1,8 @@
+@Library('olcne-pipeline') _
+import com.oracle.olcne.pipeline.BranchPattern
+
+olcnePipeline(
+  yumRepos: ['ol7_optional_latest'],
+  customStages: [container: [enabled: false]],
+  branchPattern: new BranchPattern(master: 'release/oracle/2.1.2', feature: 'feature/PR-.*')
+)

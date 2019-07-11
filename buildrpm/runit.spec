@@ -1,6 +1,6 @@
 Name:                   runit
 Version:                2.1.2
-Release:                1.0.1%{?dist}
+Release:                1.0.2%{?dist}
 Summary:                A UNIX init scheme with service supervision
 License:                BSD
 Group:                  System/Base
@@ -64,5 +64,8 @@ rm -fr %{_builddir}/%{name}-%{version}
 
 
 %changelog
+* Mon Jul 01 2019 Durai Govindasamy <durai.vattakalvalasu.govindas@oracle.com> 2.1.2-1.0.2
+- added rpm spec file for container image
+
 * Tue May 28 2019 Durai Govindasamy <durai.vattakalvalasu.govindas@oracle.com> 2.1.2-1.0.1
 - Initial packaging

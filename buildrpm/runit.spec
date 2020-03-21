@@ -12,6 +12,7 @@ BuildRequires:          git
 BuildRequires:          make
 BuildRequires:          gcc
 BuildRequires:          glibc-static
+Requires:               which
 
 %global debug_package   %{nil}
 

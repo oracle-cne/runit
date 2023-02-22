@@ -2,8 +2,8 @@
 import com.oracle.olcne.pipeline.BranchPattern
 
 olcnePipeline(
-  yumRepos: ['ol7_optional_latest'],
+  branchPattern: new BranchPattern(master: 'oracle/release/2.1.2', feature: 'feature/.*'),
   containers: ['container-registry.oracle.com/olcne/runit:2.1.2': 'olcne/runit:2.1.2'],
-  useDockerfiles: true,
-  branchPattern: new BranchPattern(master: 'oracle/release/2.1.2', feature: 'feature/.*')
+  platforms: ['ol8'],
+    yumOL8Repos: ['ol8_appstream', 'ol8_codeready_builder']
 )

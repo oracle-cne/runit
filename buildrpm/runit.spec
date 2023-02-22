@@ -1,6 +1,6 @@
 Name:                   runit
 Version:                2.1.2
-Release:                1.0.2%{?dist}
+Release:                3%{?dist}
 Summary:                A UNIX init scheme with service supervision
 License:                BSD
 Group:                  System/Base
@@ -42,7 +42,7 @@ done
 %{__install} -D -m 0750 etc/2 %{buildroot}%{_sbindir}/runsvdir-start
 
 %files
-%license package/COPYING
+%license package/COPYING THIRD_PARTY_LICENSES.txt
 %defattr(-,root,root,-)
 %{_sbindir}/chpst
 %{_sbindir}/runit
@@ -65,6 +65,9 @@ rm -fr %{_builddir}/%{name}-%{version}
 
 
 %changelog
+* Wed Feb 22 2023 Michael Thompson <michael.a.thompson@oracle.com> 2.1.2-3
+- Add OL8 support
+
 * Mon Jul 01 2019 Durai Govindasamy <durai.vattakalvalasu.govindas@oracle.com> 2.1.2-1.0.2
 - added rpm spec file for container image
 

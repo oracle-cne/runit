@@ -5,17 +5,17 @@
 %global debug_package   %{nil}
 %endif
 %{!?registry: %global registry container-registry.oracle.com/olcne}
+%global _buildhost      build-ol%{?oraclelinux}-%{?_arch}.oracle.com
 
 %global app_name runit
 %global app_version 2.1.2
-%global oracle_release_version 3
+%global oracle_release_version 4
 %global app_container_name runit
 %global app_container_version %{app_version}
 
 Name:           %{app_name}-container-image
 Version:        %{app_version}
 Release:        %{oracle_release_version}%{?dist}
-BuildArch:      x86_64
 Summary:        A UNIX init scheme with service supervision
 License:        BSD
 Group:          System/Base
@@ -39,8 +39,8 @@ shutdown and halt or reboot.
 
 %build
 %define rpm_name %{app_name}-%{version}-%{release}.%{_build_arch}
-dnf clean all
-yumdownloader --destdir=${PWD}/rpms %{rpm_name}
+yum clean all && \
+ yumdownloader --destdir=${PWD}/rpms %{rpm_name}
 
 chmod +x ./olm/builds/build-image.sh
 ./olm/builds/build-image.sh \
@@ -60,6 +60,9 @@ install -p -m 755 -t %{buildroot}/usr/local/share/olcne _output/oracle_docker/%{
 
 
 %changelog
+* Tue Oct 10 2023 Murali Annamneni <murali.annamneni@oracle.com> - 2.1.2-4
+- Add aarch64 build support
+
 * Wed Feb 22 2023 Michael Thompson <michael.a.thompson@oracle.com> 2.1.2-3
 - Add OL8 support
 

@@ -1,6 +1,8 @@
+%global _buildhost      build-ol%{?oraclelinux}-%{?_arch}.oracle.com
+
 Name:                   runit
 Version:                2.1.2
-Release:                3%{?dist}
+Release:                4%{?dist}
 Summary:                A UNIX init scheme with service supervision
 License:                BSD
 Group:                  System/Base
@@ -65,6 +67,9 @@ rm -fr %{_builddir}/%{name}-%{version}
 
 
 %changelog
+* Tue Oct 10 2023 Murali Annamneni <murali.annamneni@oracle.com> - 2.1.2-4
+- Add aarch64 build support
+
 * Wed Feb 22 2023 Michael Thompson <michael.a.thompson@oracle.com> 2.1.2-3
 - Add OL8 support
 

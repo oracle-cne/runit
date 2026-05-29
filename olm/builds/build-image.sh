@@ -27,7 +27,7 @@ fi
 VERSION=${1}
 IMAGE_LOCATION=${2}
 REGISTRY=${3:-container-registry.oracle.com/olcne}
-DOCKER_FILE=./olm/builds/Dockerfile.ol8
+DOCKER_FILE=./olm/builds/Dockerfile.ol9
 
 mkdir -p ${IMAGE_LOCATION}/oracle_docker
 

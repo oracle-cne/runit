@@ -5,7 +5,8 @@ String version = "2.1.2";
 olcnePipeline(
   branchPattern: new BranchPattern(master: 'oracle/release/' + version, feature: '(?!^release/.*$)(^.*$)'),
   containers: [('container-registry.oracle.com/olcne/runit:' + version): 'olcne/runit:' + version],
-  platforms: ['ol9'],
+  platforms: ['ol9', 'ol8'],
   architectures: ['x86_64', 'aarch64'],
+  yumOL8Repos: ['ol8_appstream', 'ol8_codeready_builder'],
   yumOL9Repos: ['ol9_appstream', 'ol9_codeready_builder']
 )

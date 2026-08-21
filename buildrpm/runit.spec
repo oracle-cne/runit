@@ -2,7 +2,7 @@
 
 Name:                   runit
 Version:                2.1.2
-Release:                4%{?dist}
+Release:                5%{?dist}
 Summary:                A UNIX init scheme with service supervision
 License:                BSD
 Group:                  System/Base
@@ -67,6 +67,9 @@ rm -fr %{_builddir}/%{name}-%{version}
 
 
 %changelog
+* Fri Aug 21 2026 Daniel Krasinski <daniel.krasinski@oracle.com> - 2.1.2-5
+- Add OL9 support
+
 * Tue Oct 10 2023 Murali Annamneni <murali.annamneni@oracle.com> - 2.1.2-4
 - Add aarch64 build support
 

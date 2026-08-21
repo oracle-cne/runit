@@ -9,7 +9,7 @@
 
 %global app_name runit
 %global app_version 2.1.2
-%global oracle_release_version 4
+%global oracle_release_version 5
 %global app_container_name runit
 %global app_container_version %{app_version}
 
@@ -60,6 +60,9 @@ install -p -m 755 -t %{buildroot}/usr/local/share/olcne _output/oracle_docker/%{
 
 
 %changelog
+* Fri Aug 21 2026 Daniel Krasinski <daniel.krasinski@oracle.com> - 2.1.2-5
+- Add OL9 support
+
 * Tue Oct 10 2023 Murali Annamneni <murali.annamneni@oracle.com> - 2.1.2-4
 - Add aarch64 build support
 
